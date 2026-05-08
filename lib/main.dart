@@ -36,23 +36,61 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          Text(
-            'Nama : Ferry Hernando',
-            style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-          ),
+          SizedBox(height: 20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center, // Horizontal centering
-            crossAxisAlignment: CrossAxisAlignment.center, // Vertical centering
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.location_on),
-              Text(
-                'Matraman,Jakarta Timur,DKI Jakarta',
-                style: TextStyle(color: Colors.deepOrange),
+              Column(
+                children: [
+                  Container(
+                    width: 370,
+                    height: 150,
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.deepPurpleAccent,
+                    ),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          child: Icon(
+                            Icons.account_circle,
+                            size: 70,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            " Hallo,",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ),
+
+                        Text(
+                          "Ferry Hae",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/sale.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
-          ),
-          Text(
-            'Seorang peserta pelatihan yang sedang mendalami Flutter di PPKD',
           ),
         ],
       ),
