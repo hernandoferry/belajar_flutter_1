@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Tugas2Flutter extends StatelessWidget {
-  const Tugas2Flutter({Key? key}) : super(key: key);
+  const Tugas2Flutter({super.key});
 
   @override
   Widget build(BuildContext context) {

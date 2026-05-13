@@ -1,6 +1,5 @@
+import 'package:belajar_flutter_1/tugas_3_flutter.dart';
 import 'package:flutter/material.dart';
-
-import 'tugas_2_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const Tugas2Flutter(),
-      // home: const MyHomePage(title: 'Profil Saya'),
+      // home: const Tugas2Flutter(),
+      //home: const MyHomePage(title: 'Profil Saya'),
+      // home: const Tugas4Flutter(),
+      home: const Tugas3Flutter(),
     );
   }
 }
@@ -28,6 +29,22 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+
+final List<Map<String, String>> dataTugas = const [
+  {"namaTugas": "Tugas 1 Fundamental Dart", "status": "Selesai", "link": "B"},
+  {"namaTugas": "Tugas 2 Fundamental Dart", "status": "Selesai", "link": "S"},
+  {"namaTugas": "Tugas 3 flutter widget", "status": "Selesai", "link": "A"},
+  {
+    "namaTugas": "Tugas 4 flutter widget layouting",
+    "status": "Belum Dikerjakan",
+    "link": "R",
+  },
+  {
+    "namaTugas": "Tugas 5 flutter widget layouting",
+    "status": "Belum Dikerjakan",
+    "link": "",
+  },
+];
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -62,36 +79,82 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.white,
                           ),
                         ),
-                        Container(
-                          child: Text(
-                            " Hallo,",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ),
 
-                        Text(
-                          "Ferry Hae",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                        Container(
+                          padding: EdgeInsets.all(15),
+                          child: Text(
+                            'Ferry Hernando',
+                            style: TextStyle(
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/sale.png"),
-                        fit: BoxFit.cover,
+                  SizedBox(height: 15),
+                  Row(
+                    children: [
+                      Container(
+                        width: 400,
+                        height: 50,
+                        color: const Color.fromARGB(255, 57, 120, 238),
+                        child: Row(
+                          children: [
+                            SizedBox(height: 5),
+                            Spacer(),
+                            Text(
+                              'Daftar Tugas',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Spacer(),
+                          ],
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
+              ),
+            ],
+          ),
+
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(20),
+                width: 480,
+                height: 400,
+                child: ListView.builder(
+                  itemCount: dataTugas.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      margin: EdgeInsets.all(20),
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.blueAccent,
+                          child: Text(
+                            "${index + 1}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+
+                        title: Text(
+                          dataTugas[index]["namaTugas"] ?? 'data kosong',
+                        ),
+
+                        subtitle: Text(
+                          dataTugas[index]['status'] ?? '00',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
             ],
           ),
