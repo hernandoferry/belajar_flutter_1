@@ -1,4 +1,4 @@
-import 'package:belajar_flutter_1/tugas_5_flutter.dart';
+import 'package:belajar_flutter_1/tugas_6_flutter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
       //home: const MyHomePage(title: 'Profil Saya'),
       //home: const Tugas4Flutter(),
       //home: const Tugas3Flutter(),
-      home: const Tugas5Flutter(),
+      //home: const Tugas5Flutter(),
+      home: const Tugas6Flutter(),
     );
   }
 }
