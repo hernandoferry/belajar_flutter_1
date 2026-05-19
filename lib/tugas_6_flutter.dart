@@ -117,11 +117,72 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                   ),
                   SizedBox(height: 35.5),
 
+                  Padding(
+                    padding: EdgeInsetsGeometry.only(left: 49, right: 56),
+                    child: Row(
+                      children: [
+                        Expanded(child: Divider()),
+                        SizedBox(width: 11),
+                        Text(
+                          'OR',
+                          style: TextStyle(
+                            color: Color(0xFFBEBEBE),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        SizedBox(width: 11),
+                        Expanded(child: Divider()),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 42.5),
                   Row(
                     children: [
-                      Expanded(child: Divider()),
-                      Text('OR'),
-                      Expanded(child: Divider()),
+                      Spacer(),
+                      Image.asset(
+                        "assets/images/Facebook.png",
+                        width: 18,
+                        height: 18,
+                      ),
+                      SizedBox(width: 3),
+                      Text(
+                        'Log in with facebook',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF1C82F9),
+                        ),
+                      ),
+                      Spacer(),
+                    ],
+                  ),
+                  SizedBox(height: 159),
+                  Divider(),
+                  SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Spacer(),
+                      Text(
+                        "Don't have an account ? ",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF888888),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0XFF1C82F9),
+                          ),
+                        ),
+                      ),
+                      Spacer(),
                     ],
                   ),
                 ],
