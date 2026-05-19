@@ -43,10 +43,11 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                         ),
                         filled: true,
                         fillColor: Color(0xFFF6F6F6),
-                        hintText: 'Phone nuber, username or email',
+                        hintText: 'Phone number, username or email',
                         hintStyle: TextStyle(
                           fontWeight: FontWeight.w700,
                           color: Color(0xFF888888),
+                          fontSize: 12,
                         ),
                       ),
                     ),
@@ -69,6 +70,7 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                         hintStyle: TextStyle(
                           color: Color(0xFF888888),
                           fontWeight: FontWeight.w700,
+                          fontSize: 12,
                         ),
                         suffixIcon: const Icon(
                           Icons.visibility_off, // Ikon mata tercoret
@@ -106,7 +108,7 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                         Text('boom');
                       },
                       child: Text(
-                        'Login',
+                        'Log in',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w700,
@@ -147,7 +149,7 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                       ),
                       SizedBox(width: 3),
                       Text(
-                        'Log in with facebook',
+                        'Log in with Facebook',
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
