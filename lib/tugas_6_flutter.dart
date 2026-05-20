@@ -1,3 +1,4 @@
+import 'package:belajar_flutter_1/tugas_2_flutter.dart';
 import 'package:flutter/material.dart';
 
 class Tugas6Flutter extends StatefulWidget {
@@ -105,7 +106,12 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                         ),
                       ),
                       onPressed: () {
-                        Text('boom');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Tugas2Flutter(),
+                          ),
+                        );
                       },
                       child: Text(
                         'Log in',
