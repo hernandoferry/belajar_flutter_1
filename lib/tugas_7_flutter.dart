@@ -56,11 +56,17 @@ class _Tugas7FlutterState extends State<Tugas7Flutter> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.time_to_leave),
+              leading: const Icon(Icons.assignment),
               title: const Text('Tugas 8 Flutter'),
               selected: selectIndexPage == 1,
               onTap: () {
-                _onItemTapped(1);
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Tugas8Flutter(),
+                  ),
+                );
               },
             ),
           ],
