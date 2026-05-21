@@ -63,9 +63,7 @@ class _Tugas7FlutterState extends State<Tugas7Flutter> {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const Tugas8Flutter(),
-                  ),
+                  MaterialPageRoute(builder: (context) => Tugas8Flutter()),
                 );
               },
             ),
