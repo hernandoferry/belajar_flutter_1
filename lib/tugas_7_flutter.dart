@@ -1,4 +1,5 @@
 import 'package:belajar_flutter_1/tugas_7_content_part.dart';
+import 'package:belajar_flutter_1/tugas_8_flutter.dart';
 import 'package:flutter/material.dart';
 
 class Tugas7Flutter extends StatefulWidget {
@@ -11,7 +12,10 @@ class Tugas7Flutter extends StatefulWidget {
 class _Tugas7FlutterState extends State<Tugas7Flutter> {
   int selectIndexPage = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[Tugas7ContentPart()];
+  static const List<Widget> _widgetOptions = <Widget>[
+    Tugas7ContentPart(),
+    Tugas8Flutter(),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -35,7 +39,7 @@ class _Tugas7FlutterState extends State<Tugas7Flutter> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: <Widget>[
+          children: [
             const DrawerHeader(
               decoration: BoxDecoration(color: Colors.black38),
               child: Text(
@@ -53,10 +57,10 @@ class _Tugas7FlutterState extends State<Tugas7Flutter> {
             ),
             ListTile(
               leading: const Icon(Icons.time_to_leave),
-              title: const Text('Tugas 2'),
-              selected: selectIndexPage == 0,
+              title: const Text('Tugas 8 Flutter'),
+              selected: selectIndexPage == 1,
               onTap: () {
-                _onItemTapped(0);
+                _onItemTapped(1);
               },
             ),
           ],
