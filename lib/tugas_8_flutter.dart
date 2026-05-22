@@ -1,3 +1,5 @@
+import 'package:belajar_flutter_1/tugas_7_content_part.dart';
+import 'package:belajar_flutter_1/tugas_8_content_tentang_app.dart';
 import 'package:flutter/material.dart';
 
 class Tugas8Flutter extends StatefulWidget {
@@ -12,8 +14,8 @@ class _Tugas8FlutterState extends State<Tugas8Flutter> {
   final List<String> judulAppBar = ['Home', 'Tentang Aplikasi'];
 
   static const List<Widget> _widgetOptions = <Widget>[
-    Text("index 0 : Home"),
-    Text("index 1 : Tentang Aplikasi"),
+    Tugas7ContentPart(),
+    Tugas8ContentTentangApp(),
   ];
 
   void _onItemTapped(int index) {
