@@ -31,7 +31,7 @@ class _Tugas9FlutterState extends State<Tugas9Flutter> {
     ];
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start, // Membuat teks rata kiri
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 8),
         const Center(
