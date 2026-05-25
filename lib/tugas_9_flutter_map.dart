@@ -25,7 +25,11 @@ class Tugas9FlutterMap extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text("Pendekatan List of Map"),
+          SizedBox(height: 10),
+          Text(
+            "2.Pendekatan List of Map",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
           const SizedBox(height: 1),
           Expanded(
             child: GridView.builder(
