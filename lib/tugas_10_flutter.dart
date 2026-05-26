@@ -1,5 +1,6 @@
 import 'package:belajar_flutter_1/tugas_10_flutter_detail_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Tugas10Flutter extends StatefulWidget {
   const Tugas10Flutter({super.key});
@@ -97,38 +98,114 @@ class _Tugas10FlutterState extends State<Tugas10Flutter> {
               TextFormField(
                 controller: _namaController,
                 decoration: const InputDecoration(labelText: 'Nama Lengkap'),
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return 'Nama lengkap tidak boleh kosong';
+                  }
+                  if (value.trim().length < 3) {
+                    return 'Nama minimal harus 3 karakter';
+                  }
+                  return null;
+                },
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(labelText: 'Email'),
                 keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return 'Email tidak boleh kosong';
+                  }
+
+                  // RegEx untuk mengecek format email yang valid
+                  final emailRegex = RegExp(
+                    r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                  );
+                  if (!emailRegex.hasMatch(value.trim())) {
+                    return 'Format email tidak valid (contoh: initest@email.com)';
+                  }
+
+                  return null; // Input valid
+                },
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _noHpController,
                 decoration: const InputDecoration(labelText: 'No. HP'),
                 keyboardType: TextInputType.phone,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return 'Nomor HP tidak boleh kosong';
+                  }
+
+                  // Menghapus spasi jika ada
+                  final cleanValue = value.trim();
+
+                  // RegEx untuk memastikan hanya berisi angka
+                  final phoneRegex = RegExp(r'^[0-9]+$');
+                  if (!phoneRegex.hasMatch(cleanValue)) {
+                    return 'Nomor HP hanya boleh berisi angka';
+                  }
+
+                  if (cleanValue.length < 9 || cleanValue.length > 13) {
+                    return 'Nomor HP tidak valid (minimal 9 dan maksimal 13 digit)';
+                  }
+
+                  return null;
+                },
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _alamatController,
                 decoration: const InputDecoration(labelText: 'Alamat'),
                 maxLines: 2,
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return "Form Alamat harus disisi !";
+                  }
+                  if (value.length < 10) {
+                    return "Jangan asal mengisi, isi alamat mu dengan benar !";
+                  }
+                  return null;
+                },
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _kotaController,
                 decoration: const InputDecoration(labelText: 'Kota Asal'),
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return "Kota asal wajib di isi !";
+                  }
+                  if (value.length < 3) {
+                    return "Emang ada nama kota hanya 3 huruf ? coba isi yang benar !";
+                  }
+                  return null;
+                },
               ),
               const SizedBox(height: 24),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _tampilkanDialog();
-                  }
-                },
-                child: const Text('Daftar'),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.amber,
+                  ),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      _tampilkanDialog();
+                    }
+                  },
+                  child: const Text(
+                    'Daftar',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
