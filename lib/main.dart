@@ -1,9 +1,15 @@
 // import 'package:belajar_flutter_1/tugas_9_flutter.dart';
-import 'package:belajar_flutter_1/tugas_10_flutter.dart';
+import 'package:belajar_flutter_1/database/preference_handler.dart';
+import 'package:belajar_flutter_1/tugas_11_flutter.dart';
+// import 'package:belajar_flutter_1/tugas_10_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // memastikan semuanya sudah berjalan terlebih dahulu
+  await initializeDateFormatting('id_ID', null); //jalankan inisialisasi
+  await PreferenceHandler.init(); //panggil class preference handler
+  runApp(const MyApp()); // jalankan aplikasi
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +29,7 @@ class MyApp extends StatelessWidget {
       // home: const Tugas6Flutter(),
       // home: const Tugas7Flutter(),
       // home: const Tugas9Flutter(),
-      home: const Tugas10Flutter(),
+      home: const Tugas11Flutter(),
     );
   }
 }

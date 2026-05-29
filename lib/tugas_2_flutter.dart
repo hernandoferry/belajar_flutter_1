@@ -1,3 +1,5 @@
+import 'package:belajar_flutter_1/database/preference_handler.dart';
+import 'package:belajar_flutter_1/tugas_6_flutter.dart';
 import 'package:flutter/material.dart';
 
 class Tugas2Flutter extends StatelessWidget {
@@ -23,7 +25,7 @@ class Tugas2Flutter extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 460,
+                width: 370,
                 height: 150,
                 padding: const EdgeInsets.all(20),
                 margin: const EdgeInsets.all(20),
@@ -160,6 +162,24 @@ class Tugas2Flutter extends StatelessWidget {
               ),
               Spacer(),
             ],
+          ),
+          SizedBox(height: 11),
+          ElevatedButton(
+            onPressed: () {
+              PreferenceHandler.logOut();
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const Tugas6Flutter()),
+                (route) => false,
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor:
+                  Colors.blueAccent, // Mengubah warna latar belakang
+              foregroundColor:
+                  Colors.white, // Mengubah warna teks/ikon di dalamnya
+            ),
+            child: Text("Log Out"),
           ),
         ],
       ),

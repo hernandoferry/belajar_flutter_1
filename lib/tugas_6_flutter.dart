@@ -1,3 +1,4 @@
+import 'package:belajar_flutter_1/database/preference_handler.dart';
 import 'package:belajar_flutter_1/tugas_2_flutter.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsetsGeometry.only(top: 202),
+              padding: EdgeInsetsGeometry.only(top: 120),
               child: Image.asset(
                 "assets/images/instagram.png",
                 width: 246,
@@ -105,7 +106,8 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                           borderRadius: BorderRadius.circular(3),
                         ),
                       ),
-                      onPressed: () {
+                      onPressed: () async {
+                        await PreferenceHandler.setLogin(true);
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -123,7 +125,7 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 35.5),
+                  SizedBox(height: 25.5),
 
                   Padding(
                     padding: EdgeInsetsGeometry.only(left: 49, right: 56),
@@ -165,7 +167,7 @@ class _Tugas6FlutterState extends State<Tugas6Flutter> {
                       Spacer(),
                     ],
                   ),
-                  SizedBox(height: 159),
+                  SizedBox(height: 90),
                   Divider(),
                   SizedBox(height: 16),
                   Row(
